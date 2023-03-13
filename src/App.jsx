@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei';
 import { Shaft } from './Loader';
@@ -12,30 +12,12 @@ function App() {
   //menu test
   const [selectedFruit, setSelectedFruit] = useState('1');
   //end
-  const [ifOne, SetifOne] = useState(false)
-  const [ifTwo, SetifTwo] = useState(true)
+ 
 
   const [motion, setMotion] = useState(true)
 
-  const ifMotion = motion ? 1 : 0
-
-  const changingValues=()=>{
-    if(selectedFruit==='1'){
-      SetifOne(true)
-      SetifTwo(false)
-    }
-    if(selectedFruit==='2'){
-      SetifOne(false)
-      SetifTwo(true)
-    }
-  }
+  const ifMotion = motion ? 1 : 0 
  
-  useEffect(()=>{
-    console.log(selectedFruit);
-    changingValues();
-    console.log("ifOne="+ifOne);
-    console.log("ifTwo="+ifTwo)
-  })
 
   return (
     <div className="App">
@@ -46,17 +28,18 @@ function App() {
         <pointLight position={[10, 10, 10]} />
         <pointLight position={[-10, 5, 10]} />
         <pointLight position={[-10, 10, -10]} />
-        {ifOne === true &&
+        {selectedFruit === "1" &&
           <Shaft obrot={ifMotion} />
         }
 
-        {ifTwo === true &&
+        {selectedFruit === "2" &&
           <Bearing obrot={ifMotion} />
         }
         <OrbitControls />
       </Canvas>,
       <Button1 click={(e) => { setMotion(!motion) }} />
       <select
+        className = 'Selector'
         value={selectedFruit} // ...force the select's value to match the state variable...
         onChange={e =>{ setSelectedFruit(e.target.value);
         }} // ... and update the state variable on any change!
