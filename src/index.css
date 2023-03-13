@@ -27,6 +27,14 @@ canvas {
   color: white;
 }
 
+.Selector{
+  position: absolute;
+  width: 140px;
+  height: 60px;
+  top:40px;
+  left:40px;
+}
+
 #przycisk{
   position: absolute;
   top:40px;

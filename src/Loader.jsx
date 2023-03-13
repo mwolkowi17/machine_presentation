@@ -1,6 +1,6 @@
 import { useLoader, useFrame } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import React, {useRef,useState} from 'react';
+import React, {useRef} from 'react';
 
 
 export const Shaft=(props)=>{
