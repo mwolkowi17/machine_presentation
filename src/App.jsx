@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Html } from '@react-three/drei';
 import { Shaft } from './Loader';
 import { Bearing } from './Loader2';
+import { Gear } from './Loader3';
 import { Button1 } from './Button';
 
 
@@ -18,7 +19,7 @@ function App() {
 
   const ifMotion = motion ? 1 : 0
 
-  const Loafding_info = () => {
+  const LoafdingInfo = () => {
     return <Html center style={{ color: 'white' }}>loading...</Html>
   }
 
@@ -34,14 +35,19 @@ function App() {
         <pointLight position={[-10, 5, 10]} />
         <pointLight position={[-10, 10, -10]} />
         {selectedFruit === "1" &&
-          <Suspense fallback={<Loafding_info />}>
+          <Suspense fallback={<LoafdingInfo />}>
             <Shaft obrot={ifMotion} />
           </Suspense>
         }
 
         {selectedFruit === "2" &&
-          <Suspense fallback={<Loafding_info />}>
+          <Suspense fallback={<LoafdingInfo />}>
             <Bearing obrot={ifMotion} />
+          </Suspense>
+        }
+        {selectedFruit === "3" &&
+          <Suspense fallback={<LoafdingInfo />}>
+            <Gear obrot={ifMotion} />
           </Suspense>
         }
         <OrbitControls />
