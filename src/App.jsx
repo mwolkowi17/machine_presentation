@@ -63,7 +63,7 @@ function App() {
 
         <option value="1">Sprzęgło</option>
         <option value="2">Łożysko</option>
-        <option value="3">Orange</option>
+        <option value="3">Gear</option>
       </select>
     </div>
   );
